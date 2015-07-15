@@ -1,0 +1,90 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+h1{
+   
+}
+
+figure{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 599px;
+    
+    img{
+        max-width: 100%;
+        &:nth-child(2){
+            position: absolute;
+            top:0;
+            left: 0;
+            opacity: 0;
+            
+            animation: enhance linear 10s infinite;
+        }
+    }
+    >div{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 4;
+        height: 1.2rem;
+        overflow: hidden;
+        font-family: menlo, monospace;
+        
+        &::after{
+            content: '年';
+        }
+        
+        div {
+          display: inline-block;
+          animation: years linear 10s infinite;
+        }
+
+        span {
+          display: block;
+          line-height: 1.2rem;
+        }       
+    }
+}
+
+@keyframes enhance{
+    
+    10%{
+        opacity: 0;
+    }
+    
+    30%, 70%{
+        opacity: 1;
+    }
+    
+    90%{
+        opacity: 0;
+    }
+}
+ 
+
+@keyframes years{
+
+    10% {
+        transform: translateY(0);
+    }
+    
+    30%, 70%{
+        transform: translateY(-95%);
+    }
+    
+    90% {
+        transform: translateY(0);
+    }
+}
+
+body{
+
+    color: aliceblue;
+    font-family: monospace sans-serif;
+    background: #000;
+}
